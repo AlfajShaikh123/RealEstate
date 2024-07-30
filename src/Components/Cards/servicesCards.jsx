@@ -6,7 +6,7 @@ import {
 function ServiceCard() {
     return (<>
 
-        <div className="bg-gray-300 p-5 mt-5">
+        <div className="bg-gray-200 p-5 mt-5">
             <p className="text-center  font-bold text-xl">What We Do ? </p>
             <div className="flex w-[50%] md:flex-row flex-col  m-auto gap-3 mt-5">
                 <div className="bg-white rounded-xl p-5 space-y-5">

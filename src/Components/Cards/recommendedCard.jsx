@@ -131,9 +131,9 @@ function RecommendedCard() {
             <div className="bg-gray-500 p-3 rounded-full text-center hover:bg-red-900">Studio</div>
             <div className="bg-gray-500 p-3 rounded-full text-center hover:bg-red-900">Home</div>
         </div>
-        <div className="flex justify-center flex-wrap mt-5 mb-5 gap-2 md:grid md:grid-rows-3 md:grid-flow-col ">
+        <div className="flex justify-center flex-wrap mt-10 mb-5 gap-5 md:grid md:grid-rows-3 md:grid-flow-col  ">
             {data.map(({ image, price, text, location, bed, bath, park, picture, activity, name }, index) => (
-                <Card className="max-w-[20rem] max-h-[30rem] overflow-hidden">
+                <Card className="max-w-[20rem] max-h-[30rem] overflow-hidden transform transition-transform duration-300 hover:scale-110 cursor-pointer">
                     <CardHeader
                         floated={false}
                         shadow={false}

@@ -467,6 +467,7 @@ function NavListMenu() {
 
     return (
         <React.Fragment>
+            {/* BUY */}
             <Menu
                 open={isMenuOpen}
                 handler={setIsMenuOpen}
@@ -474,7 +475,7 @@ function NavListMenu() {
                 placement="bottom"
                 allowHover={true}
             >
-                {/* BUY */}
+
                 <MenuHandler>
                     <Typography as="div" variant="small" className="font-medium">
                         <ListItem
@@ -502,7 +503,9 @@ function NavListMenu() {
                     </ul>
                 </MenuList>
             </Menu>
-
+            <div className="block lg:hidden">
+                <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
+            </div>
             {/* SELL  */}
             <Menu
                 open={isSellMenuOpen}
@@ -624,9 +627,7 @@ function NavListMenu() {
 
 
 
-            <div className="block lg:hidden">
-                <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
-            </div>
+            
         </React.Fragment>
     );
 }
@@ -671,7 +672,7 @@ export function Header() {
 
     return (
         <div>
-            <Navbar className="mx-auto max-w-screen-4xl px-4 py-2 fixed top-0">
+            <Navbar className="mx-auto max-w-screen-4xl px-4 py-2 fixed z-10  top-0">
                 <div className="flex items-center justify-between text-blue-gray-900">
                     <Typography
                         as="a"
