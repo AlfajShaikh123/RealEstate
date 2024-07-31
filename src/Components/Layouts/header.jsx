@@ -11,6 +11,13 @@ import {
     MenuHandler,
     MenuList,
     MenuItem,
+    Dialog,
+    Card,
+    CardHeader,
+    CardBody,
+    CardFooter,
+    Input,
+    Checkbox,
 } from "@material-tailwind/react";
 import {
     ChevronDownIcon,
@@ -28,6 +35,7 @@ import {
     TagIcon,
     UserGroupIcon,
 } from "@heroicons/react/24/solid";
+import LoginRegister from "../Dialog/LoginRegister";
 
 const navListMenuItems = [
     {
@@ -627,7 +635,7 @@ function NavListMenu() {
 
 
 
-            
+
         </React.Fragment>
     );
 }
@@ -662,6 +670,8 @@ function NavList() {
 
 export function Header() {
     const [openNav, setOpenNav] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen((cur) => !cur);
 
     React.useEffect(() => {
         window.addEventListener(
@@ -686,9 +696,15 @@ export function Header() {
                         <NavList />
                     </div>
                     <div className="hidden gap-2 lg:flex">
-                        <Button variant="outlined" size="sm" color="red">
+                        <Button variant="outlined" size="sm" color="red" onClick={handleOpen}>
                             LogIn / Register
                         </Button>
+                        <Dialog size="xs"
+                            open={open}
+                            handler={handleOpen}
+                            className="bg-transparent shadow-none">
+                                <LoginRegister/>
+                            </Dialog>
                         <Button variant="gradient" size="sm" color="red">
                             Submit Property
                         </Button>
@@ -709,7 +725,7 @@ export function Header() {
                 <Collapse open={openNav}>
                     <NavList />
                     <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-                        <Button variant="outlined" size="sm" color="blue-gray" fullWidth>
+                        <Button variant="outlined" size="sm" color="blue-gray" fullWidth onClick={handleOpen}>
                             LogIn / Register
                         </Button>
                         <Button variant="gradient" size="sm" fullWidth>

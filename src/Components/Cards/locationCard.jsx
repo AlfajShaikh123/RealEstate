@@ -53,7 +53,7 @@ function LocationCard() {
                         ))}
                     </div>
 
-                   
+
 
                     <i class="fa fa-chevron-right bg-gray-300 p-2 rounded-full hover:bg-gray-400 " aria-hidden="true" onClick={handleNextClick}></i>
 
@@ -70,7 +70,7 @@ function LocationCard() {
                         ))}
                     </div>
 
-                   
+
 
                     <i class="fa fa-chevron-right bg-gray-300 p-2 rounded-full hover:bg-gray-400 " aria-hidden="true" onClick={handleNextClick1}></i>
 
@@ -78,7 +78,7 @@ function LocationCard() {
 
             </div>
         </div>
-        )
+
 
     </>)
 }
