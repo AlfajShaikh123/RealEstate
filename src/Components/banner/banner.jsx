@@ -13,7 +13,7 @@ function Banner() {
                     className="rounded-lg shadow-lg h-[800px] w-full "
                 />
                 <div className="absolute inset-0 flex flex-col items-center  bg-black bg-opacity-50 p-4 mt-16 h-[735px] space-y-5">
-                    <h1 className="text-white text-5xl mb-4 mt-28 text-center font-bold ">Find the perfect place <br />   to call home</h1>
+                    <h1 className="text-white text-5xl mb-4 md:mt-28 mt-5 text-center font-bold ">Find the perfect place <br />   to call home</h1>
                     <p className="text-white text-center text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br /> Ab totam officia odit, dolore in labore voluptate ea ducimus quis consectetur.</p>
                     <div className="flex space-x-4 ">
                         <Button className="bg-white text-black hover:bg-red-900 rounded-full">Rent</Button>
@@ -60,22 +60,22 @@ function Banner() {
             </div>
 
         </div>
-        <div className="bg-gray-300 p-10 mb-5 flex justify-center gap-24 flex-wrap">
+        <div className="bg-gray-300 p-10  mb-5 md:flex md:justify-center grid  gap-10 grid-rows-2 grid-flow-col  ">
             <div className="flex gap-3 items-center">
-                <p className="text-4xl text-red-800">300 +</p>
-                <p className="font-bold text-xl">Happy <br /> clients</p>
+                <p className="md:text-4xl text-2xl text-red-800">300+</p>
+                <p className="font-bold md:text-xl">Happy <br /> clients</p>
             </div>
             <div className="flex gap-3 items-center">
-                <p className="text-4xl text-red-800">1K +</p>
-                <p className="font-bold text-xl">Property <br />  Ready</p>
+                <p className="md:text-4xl text-2xl text-red-800">1K+</p>
+                <p className="font-bold md:text-xl">Property <br />  Ready</p>
             </div>
             <div className="flex gap-3 items-center" >
-                <p className="text-4xl text-red-800">80 +</p>
-                <p className="font-bold text-xl">Completed  <br />  Agents</p>
+                <p className="md:text-4xl text-2xl text-red-800">80+</p>
+                <p className="font-bold md:text-xl">Completed  <br />  Agents</p>
             </div>
             <div className="flex gap-3 items-center">
-                <p className="text-4xl text-red-800">60 %</p>
-                <p className="font-bold text-xl">Yearly  <br />  Growth</p>
+                <p className="md:text-4xl text-2xl text-red-800">60%</p>
+                <p className="font-bold md:text-xl">Yearly  <br />  Growth</p>
             </div>
         </div>
     </>)

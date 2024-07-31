@@ -1,6 +1,17 @@
 function Footer() {
     return (<>
-        <div className="bg-black w-full  p-10">
+        <div className="bg-black w-full  p-10 space-y-3">
+            <div className="flex justify-between gap-5">
+                <p className="text-red-900 mb-10 text-xl font-bold">RealEstate</p>
+                <div className="flex gap-4">
+                    <h3 className="text-white">Follow us :</h3>
+                    <img src="src\assets\images\facebook (2).png" alt="" className="h-7" />
+                    <img src="src\assets\images\instagram (3).png" className="h-7" alt="" />
+                    <img src="src\assets\images\message.png" className="h-7 bg-blue-800" alt="" />
+                    <img src="src\assets\images\twitter (1).png" className="h-7 bg-blue-800 " alt="" />
+
+                </div>
+            </div>
             <div className=" md:flex  md:flex-row   justify-between w-full ">
                 <div>
                     <p className="text-white text-sm">Specializes in providing high-class tour for those in need. Contact us</p>
@@ -18,23 +29,23 @@ function Footer() {
                     </div>
                 </div>
                 <div className="grid grid-rows-1 grid-flow-col md:gap-32">
-                <div className="text-white text-sm space-y-3 cursor-pointer">
-                    <p className="text-lg">Categories</p>
-                    <p>Pricing plans</p>
-                    <p>Our Services</p>
-                    <p>About us</p>
-                    <p>Contact us</p>
+                    <div className="text-white text-sm space-y-3 cursor-pointer">
+                        <p className="text-lg">Categories</p>
+                        <p>Pricing plans</p>
+                        <p>Our Services</p>
+                        <p>About us</p>
+                        <p>Contact us</p>
+                    </div>
+                    <div className="text-white text-sm space-y-3 cursor-pointer">
+                        <p className="text-lg">Our Company</p>
+                        <p>Property For Sale</p>
+                        <p>Property For Rent</p>
+                        <p>Property For Buy</p>
+                        <p>Our Agents</p>
+                    </div>
+
                 </div>
-                <div className="text-white text-sm space-y-3 cursor-pointer">
-                    <p className="text-lg">Our Company</p>
-                    <p>Property For Sale</p>
-                    <p>Property For Rent</p>
-                    <p>Property For Buy</p>
-                    <p>Our Agents</p>
-                </div>
-                
-                </div>
-                <div className="text-white text-sm space-y-3 cursor-pointer mt-5">
+                <div className="text-white text-sm space-y-3 cursor-pointer ">
                     <p className="text-lg">Newsletter</p>
                     <p>Your Weekly / Montly Dose of Knowledge and Inspiration</p>
                     <p className="flex gap-2 ">
@@ -43,7 +54,7 @@ function Footer() {
                     </p>
 
                 </div>
-                
+
 
             </div>
             <hr className="mt-5" />

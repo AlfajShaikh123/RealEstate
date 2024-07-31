@@ -10,7 +10,7 @@ const data = [
         text2: "(88 Property)"
     },
     {
-        image: "src/assets/images/resort.png",
+        image: "https://icon2.cleanpng.com/lnd/20240702/cor/a7c2tz30d.webp",
         text1: "Vaccation & Resort",
         text2: "(74 Property)"
     },
@@ -44,15 +44,15 @@ const data = [
 
 function Card() {
     return (<>
-        <div className="flex justify-center gap-4 flex-wrap md:grid md:grid-rows-2 md:grid-flow-col">
+        <div className="  justify-center gap-4  grid md:grid-rows-2 md:grid-flow-col grid-rows-4 grid-flow-col ">
             {data.map(({ image, text1, text2 }, index) => (
                 <div className="md:flex bg-gray-100  justify-center items-center md:gap-3   p-2 rounded-xl" key={index}>
                     <div className=" rounded-full bg-white border-2 md:p-3 p-5 ">
-                        <img src={image} className="md:h-9 h-10 m-auto" alt="" />
+                        <img src={image} className="md:h-9 h-10 md:w-10 w-14 m-auto" alt="" />
                     </div>
                     <div className="">
-                        <p className="text-sm font-bold">{text1}</p>
-                        <p className="text-xs text-gray-800 text-center ">{text2}</p>
+                        <p className="text-xs font-bold text-center">{text1}</p>
+                        <p className="text-[10px] text-gray-800 text-center ">{text2}</p>
                     </div>
                 </div>
             ))}

@@ -672,7 +672,7 @@ export function Header() {
 
     return (
         <div>
-            <Navbar className="mx-auto max-w-screen-4xl px-4 py-2 fixed z-10  top-0">
+            <Navbar className="mx-auto max-w-screen-4xl px-4 py-2 fixed z-10  top-0 rounded-none">
                 <div className="flex items-center justify-between text-blue-gray-900">
                     <Typography
                         as="a"

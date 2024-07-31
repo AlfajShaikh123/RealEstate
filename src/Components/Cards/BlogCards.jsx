@@ -36,11 +36,11 @@ function BlogCards() {
         <div className="mt-10 mb-5 ">
             <p className="text-center text-2xl font-bold">Latest Blog post</p>
         </div>
-        <div className="flex justify-center md:flex-row  flex-col items-center gap-5 mb-10  ">
-            
+        <div className="flex justify-center md:flex-row  flex-col items-center gap-10 mb-10  ">
+
             {
                 data.map(({ image, heading, date, name, description }, index) => (
-                    <Card className="mt-10 w-96 space-y-3 shadow-xl transform transition-transform duration-300 gap-5 hover:scale-110">
+                    <Card className="mt-10 md:max-w-[20rem] max-h-[30rem] space-y-3 shadow-xl transform transition-transform duration-300  md:hover:scale-105">
                         <CardHeader className=" h-50">
                             <img
                                 src={image}

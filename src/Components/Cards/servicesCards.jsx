@@ -8,7 +8,7 @@ function ServiceCard() {
 
         <div className="bg-gray-200 p-5 mt-5">
             <p className="text-center  font-bold text-xl">What We Do ? </p>
-            <div className="flex w-[50%] md:flex-row flex-col  m-auto gap-3 mt-5">
+            <div className="flex md:max-w-[60rem]   md:flex-row flex-col  m-auto gap-3 mt-5 ">
                 <div className="bg-white rounded-xl p-5 space-y-5">
                     <img src="https://cdn-icons-png.flaticon.com/512/1441/1441311.png" alt="" className="h-10 m-auto" />
                     <p className="text-center font-bold">Buy A New Home</p>
