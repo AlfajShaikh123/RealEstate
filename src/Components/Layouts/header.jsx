@@ -36,6 +36,7 @@ import {
     UserGroupIcon,
 } from "@heroicons/react/24/solid";
 import LoginRegister from "../Dialog/LoginRegister";
+import { NavLink } from "react-router-dom";
 
 const navListMenuItems = [
     {
@@ -337,6 +338,7 @@ const DashboardItems = [
     },
     {
         description: "Add property",
+        navLink: "properties"
     },
 ];
 
@@ -355,7 +357,7 @@ function NavListMenu() {
     const [isDashMobileMenuOpen, setDashIsMobileMenuOpen] = React.useState(false);
 
 
-    const renderDashItems = DashboardItems.map(({ icon, title, description }, key) => (
+    const renderDashItems = DashboardItems.map(({ icon, title, description,navLink }, key) => (
         <a href="#" key={key}>
             <MenuItem className="flex items-center gap-3 rounded-lg">
                 {/* <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
@@ -373,12 +375,16 @@ function NavListMenu() {
                     >
                         {title}
                     </Typography>
+                    
                     <Typography
                         variant="paragraph"
                         className="text-xs !font-medium text-blue-gray-500"
                     >
-                        {description}
+                        <NavLink to={navLink}> {description}</NavLink>
+                       
                     </Typography>
+                   
+                   
                 </div>
             </MenuItem>
         </a>
@@ -703,8 +709,8 @@ export function Header() {
                             open={open}
                             handler={handleOpen}
                             className="bg-transparent shadow-none">
-                                <LoginRegister/>
-                            </Dialog>
+                            <LoginRegister />
+                        </Dialog>
                         <Button variant="gradient" size="sm" color="red">
                             Submit Property
                         </Button>
