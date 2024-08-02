@@ -323,6 +323,7 @@ const DashboardItems = [
     },
     {
         description: "My properties",
+        navLink:"propertieslisting"
     },
     {
         description: "My Invoices",
@@ -360,13 +361,7 @@ function NavListMenu() {
     const renderDashItems = DashboardItems.map(({ icon, title, description,navLink }, key) => (
         <a href="#" key={key}>
             <MenuItem className="flex items-center gap-3 rounded-lg">
-                {/* <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
-                    {" "}
-                    {React.createElement(icon, {
-                        strokeWidth: 2,
-                        className: "h-6 text-gray-900 w-6",
-                    })}
-                </div> */}
+               
                 <div>
                     <Typography
                         variant="h6"
@@ -690,6 +685,7 @@ export function Header() {
         <div>
             <Navbar className="mx-auto max-w-screen-4xl px-4 py-2 fixed z-10  top-0 rounded-none">
                 <div className="flex items-center justify-between text-blue-gray-900">
+                    <NavLink to={"/"}>
                     <Typography
                         as="a"
                         href="#"
@@ -698,6 +694,7 @@ export function Header() {
                     >
                         RealEstate
                     </Typography>
+                    </NavLink>
                     <div className="hidden lg:block">
                         <NavList />
                     </div>

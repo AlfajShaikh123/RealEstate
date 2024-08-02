@@ -8,6 +8,7 @@ import {
     Radio,
     Select, Option,
     Input,
+    Checkbox,
     Textarea,
     Button,
 } from "@material-tailwind/react";
@@ -61,7 +62,7 @@ function Properties() {
                         <Button color="red" className="mt-20 w-50 m-auto " fullWidth type="button" onClick={handleButtonClick}>
                             Choose Image
                         </Button>
-                        <p className="text-center text-sm">Drag image here to upload</p>
+                        <p className="text-center text-sm p-5 ">Drag image here to upload</p>
                     </div>
 
 
@@ -89,7 +90,7 @@ function Properties() {
                                 </Select>
                             </div>
                             <div className="w-full">
-                                <p className="mb-2">Status</p>
+                                <p className="mb-2">Type</p>
                                 <Select label="Type">
                                     <Option>Apartment</Option>
                                     <Option>House</Option>
@@ -217,6 +218,7 @@ function Properties() {
                         <div className="flex gap-5">
                             <div className="w-full">
                                 <p className="mb-2">Building Age </p>
+
                                 <Select label="Select Version" className="">
                                     <Option>0-1 Year</Option>
                                     <Option>0-5 Year</Option>
@@ -228,11 +230,11 @@ function Properties() {
                             <div className="w-full">
                                 <p className="mb-2">Bedrooms</p>
                                 <Select label="Select Version" className="">
-                                    <Option>Material Tailwind HTML</Option>
-                                    <Option>Material Tailwind React</Option>
-                                    <Option>Material Tailwind Vue</Option>
-                                    <Option>Material Tailwind Angular</Option>
-                                    <Option>Material Tailwind Svelte</Option>
+                                    <Option>1</Option>
+                                    <Option>2</Option>
+                                    <Option>3</Option>
+                                    <Option>4</Option>
+                                    <Option>5</Option>
                                 </Select>
                             </div>
                             <div className="w-full">
@@ -251,13 +253,14 @@ function Properties() {
 
                         <div className="mt-4">
                             <p>Other Features (Optional)</p>
-                            <div className="flex gap-10">
-                                <Radio name="type" label="Air Conditioning" />
-                                <Radio name="type" label="Swimming Pool " />
-                                <Radio name="type" label="Central Heating" />
-                                <Radio name="type" label="Landary Rooms" />
-                                <Radio name="type" label="Gym" />
-                                <Radio name="type" label="Window Covering" />
+                            <div className="flex gap-6">
+                                <Checkbox label="Air Conditioning" />;
+                                <Checkbox label="Swimming Pool" />;
+                                <Checkbox label="Landary Rooms" />;
+                                <Checkbox label="Central Heating" />;
+                                <Checkbox label="Gym" />;
+                                <Checkbox label="Window Covering" />;
+
                             </div>
                         </div>
 
