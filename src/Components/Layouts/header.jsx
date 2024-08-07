@@ -327,6 +327,7 @@ const DashboardItems = [
     },
     {
         description: "My Invoices",
+        
     },
     {
         description: "My Favorites",

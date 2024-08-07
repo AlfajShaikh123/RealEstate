@@ -62,7 +62,7 @@ function LoginRegister() {
         }
         if (!mobile) {
             errors.mobile = "Mobile number is required";
-        } else if(mobile.length<=10){
+        } else if (mobile.length <= 10) {
             errors.mobile = "Check mobile degits";
         }
         if (!password) {
@@ -153,7 +153,7 @@ function LoginRegister() {
                                         size="lg"
                                         variant="outlined"
                                         color="blue-gray"
-                                        className="flex items-center gap-3 mt-5 m-auto"
+                                        className="flex items-center gap-3 mt-5 m-auto w-72 justify-center"
                                     >
                                         <img src="https://docs.material-tailwind.com/icons/google.svg" alt="google" className="h-6 w-6" />
                                         Sign up with Google
@@ -162,9 +162,9 @@ function LoginRegister() {
                                         size="lg"
                                         variant="outlined"
                                         color="blue-gray"
-                                        className="flex items-center gap-3 mt-5 m-auto"
+                                        className="flex items-center gap-3 mt-5 m-auto w-72 justify-center"
                                     >
-                                        <img src="src/assets/images/facebook.png" alt="facebook" className="h-6 w-6" />
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsGZd6eOmbsz4wt_cUm9pAeLUxqNXUQFGiPA&s" alt="facebook" className="h-6 w-6" />
                                         Sign up with Facebook
                                     </Button>
                                 </Typography>
@@ -178,8 +178,8 @@ function LoginRegister() {
                         </div>
                     </Card>
                 ) : (
-                    <Card color="transparent" shadow={false} className="mt-5">
-                        <div className="overflow-auto h-[500px]">
+                    <Card color="transparent" shadow={false} className="mt-5 ">
+                        <div className="overflow-auto no-scrollbar h-[500px]">
                             <form className="" onSubmit={handleRegisterSubmit}>
                                 <div className="mb-1 flex flex-col gap-6">
                                     <Typography>
@@ -221,7 +221,7 @@ function LoginRegister() {
                                         onChange={(e) => setMobile(e.target.value)}
                                     />
                                     {errors.mobile && <p className="text-red-500">{errors.mobile}</p>}
-                                    
+
                                     <Typography variant="h6" color="blue-gray" className="-mb-3">
                                         Enter Your Password
                                     </Typography>
@@ -257,9 +257,8 @@ function LoginRegister() {
                                             <Typography
                                                 variant="small"
                                                 color="gray"
-                                                className="flex items-center font-normal"
-                                            >
-                                                By creating an account you agree to our <span className="font-bold text-red-900">Terms & Conditions</span> and <span className="font-bold text-red-900">Policy</span>
+                                                className="  text-sm  font-normal"
+                                            > By creating an account you agree to our <span className="font-bold text-red-900">Terms & Conditions</span> and <span className="font-bold text-red-900">Policy</span>
                                             </Typography>
                                         }
                                         containerProps={{ className: "-ml-2.5" }}
