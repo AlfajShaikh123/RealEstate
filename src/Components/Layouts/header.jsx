@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from 'react'
 import {
     Navbar,
     Collapse,
@@ -36,7 +36,8 @@ import {
     UserGroupIcon,
 } from "@heroicons/react/24/solid";
 import LoginRegister from "../Dialog/LoginRegister";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
+import Spinner from '../Spinner/Spinner';
 
 const navListMenuItems = [
     {
@@ -323,11 +324,11 @@ const DashboardItems = [
     },
     {
         description: "My properties",
-        navLink:"propertieslisting"
+        navLink: "propertieslisting"
     },
     {
         description: "My Invoices",
-        
+
     },
     {
         description: "My Favorites",
@@ -358,11 +359,21 @@ function NavListMenu() {
     const [isDashMenuOpen, setDashIsMenuOpen] = React.useState(false);
     const [isDashMobileMenuOpen, setDashIsMobileMenuOpen] = React.useState(false);
 
+    const [loading, setLoading] = useState(false);
+    const handleNavClick = (e, link) => {
+        e.preventDefault();
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+            document.getElementById(link).click(); // Programmatically click the NavLink
+        }, 2000); // Simulate a 2 second loading time
+    };
 
-    const renderDashItems = DashboardItems.map(({ icon, title, description,navLink }, key) => (
+
+    const renderDashItems = DashboardItems.map(({ icon, title, description, navLink }, key) => (
         <a href="#" key={key}>
             <MenuItem className="flex items-center gap-3 rounded-lg">
-               
+
                 <div>
                     <Typography
                         variant="h6"
@@ -371,20 +382,21 @@ function NavListMenu() {
                     >
                         {title}
                     </Typography>
-                    
+
                     <Typography
                         variant="paragraph"
-                        className="text-xs !font-medium text-blue-gray-500"
+                        className="text-xs !font-medium text-blue-gray-500" onClick={handleNavClick}
                     >
-                        <NavLink to={navLink}> {description}</NavLink>
-                       
+                        <NavLink to={navLink} id={navLink} > {description}</NavLink>
+
                     </Typography>
-                   
-                   
+
+
                 </div>
             </MenuItem>
         </a>
-    ))
+    ));
+   
 
     const renderRentItems = RentItems.map(({ icon, title, description }, key) => (
         <a href="#" key={key}>
@@ -474,7 +486,9 @@ function NavListMenu() {
             </a>
         ),
     );
-
+    if (loading) {
+        return <Spinner/> // Show spinner while loading
+    }
     return (
         <React.Fragment>
             {/* BUY */}
@@ -687,14 +701,14 @@ export function Header() {
             <Navbar className="mx-auto max-w-screen-4xl px-4 py-2 fixed z-10  top-0 rounded-none">
                 <div className="flex items-center justify-between text-blue-gray-900">
                     <NavLink to={"/"}>
-                    <Typography
-                        as="a"
-                        href="#"
-                        variant="h6"
-                        className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-2xl text-red-900"
-                    >
-                        RealEstate
-                    </Typography>
+                        <Typography
+                            as="a"
+                            href="#"
+                            variant="h6"
+                            className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-2xl text-red-900"
+                        >
+                            RealEstate
+                        </Typography>
                     </NavLink>
                     <div className="hidden lg:block">
                         <NavList />

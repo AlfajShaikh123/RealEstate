@@ -241,6 +241,18 @@ function ProductDetails() {
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentIndex1, setCurrentIndex1] = useState(0);
+
+    const [isZoomed, setIsZoomed] = useState(false);
+    const [zoomedImage, setZoomedImage] = useState(null);
+    const handleZoom = (image) => {
+        setZoomedImage(image);
+        setIsZoomed(!isZoomed);
+    };
+
+    const handleZoomOut = () => {
+        setIsZoomed(false);
+        setZoomedImage(null);
+    };
     const handlePrevClick = () => {
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? cards.length - 8 : prevIndex - 1));
     };
@@ -398,11 +410,36 @@ function ProductDetails() {
 
             </Carousel>
 
+
+
+
+
             <div>
+                {/* sub images */}
                 <div className="flex justify-center gap-7 p-5 ">
-                    {subImages.map(({ image }, index) => (
-                        <img src={image} alt="" className="h-40 rounded-xl" />
-                    ))}
+                    <div
+                        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transform transition-transform duration-300 ${isZoomed ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                        onClick={handleZoomOut}
+                    ></div>
+                    {zoomedImage && (
+                        <img
+                            src={zoomedImage}
+                            alt="Zoomed"
+                            className={`fixed inset-0 m-auto transform transition-transform duration-300 cursor-pointer max-w-64 max-h-64 ${isZoomed ? 'transform scale-150 z-50' : ''}`}
+                            onClick={handleZoomOut}
+                        />
+                    )}
+                    <div className="flex justify-center gap-7 p-5">
+                        {subImages.map(({ image }, index) => (
+                            <img
+                                key={index}
+                                src={image}
+                                alt={`Thumbnail ${index + 1}`}
+                                className="transform transition-transform duration-300 cursor-pointer h-52"
+                                onClick={() => handleZoom(image)}
+                            />
+                        ))}
+                    </div>
                 </div>
 
                 <div className="flex m-10">
@@ -715,10 +752,11 @@ function ProductDetails() {
                 </div>
 
                 {/* Previously used Properties */}
-                <div className="m-5 mb-10 pb-5 ">
+                <div className=" shadow-2xl bg-white rounded-2xl  p-5 m-14 pb-10">
 
 
-                    <div className="md:flex items-center  space-x-4 mb-4 hidden  p-5 m-10  shadow-2xl bg-white rounded-2xl">
+                    <p className="font-bold text-xl mb-5">Guest Reviews</p>
+                    <div className="md:flex items-center  space-x-4 mb-4   ">
 
                         <i class="fa fa-chevron-left bg-gray-300 p-5 rounded-full hover:bg-gray-400" aria-hidden="true" onClick={handlePrevClick}></i>
 
@@ -741,7 +779,7 @@ function ProductDetails() {
                                             <Typography variant="h5" color="blue-gray" className="text-red-900">
                                                 <i class="fa fa-inr" aria-hidden="true"></i>  {item.price} Per month
                                             </Typography>
-                                            <Typography variant="lead" color="black" className="mt-3 font-normal">
+                                            <Typography variant="lead" color="black" className="mt-3 font-normal text-[16px]">
                                                 {item.text}
                                             </Typography>
                                             <Typography variant="lead" color="gray" className="mt-3 font-normal">

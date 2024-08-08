@@ -166,7 +166,7 @@ function PropertyListing() {
         <div className={`bg-gray-100 flex flex-col space-y-4 p-10 `} >
             <p className="text-black">Search</p>
             <ButtonGroup variant="outlined">
-                <Button className="hover:bg-red-800 hover:text-white">For rent </Button>
+                <Button className="hover:bg-red-800  hover:text-white">For rent </Button>
                 <Button className="hover:bg-red-800 hover:text-white">For Sale</Button>
 
             </ButtonGroup>
